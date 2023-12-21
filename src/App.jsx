@@ -1,48 +1,24 @@
-import './App.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import WebGL from 'three/addons/capabilities/WebGL.js';
+import React, { Suspense } from 'react';
+// import { BrowserRouter as Routes, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function App() {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
+import ModelDemo from './ModelDemo';
+import Model1 from './Model1';
+
+function Routers() {
+  // const auth = JSON.parse(localStorage.getItem('token'));
+  // console.log(auth);
+  return (
+    <Router>
+      <Suspense fallback={<h1>Loading....</h1>}>
+        {/* <Header /> */}
+        <Routes>
+          <Route path='/3dModel' element={<ModelDemo />} />
+          <Route exact path='/' element={<Model1 />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
-
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
-
-  camera.position.z = 5;
-
-  function animate() {
-    requestAnimationFrame(animate);
-
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  if (WebGL.isWebGLAvailable()) {
-    // Initiate function or other initializations here
-    animate();
-  } else {
-    const warning = WebGL.getWebGLErrorMessage();
-    document.getElementById('container').appendChild(warning);
-  }
-  return <div className='App'></div>;
 }
 
-export default App;
+export default Routers;
