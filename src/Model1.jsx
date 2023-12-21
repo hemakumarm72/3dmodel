@@ -1,6 +1,6 @@
 import './Mode1.css';
 import React, { useEffect } from 'react';
-import logo from '../src/Willeder_logo_vertical_composition.png';
+import logo from '../src/450-20180301183118.jpg';
 const Model1 = () => {
   const Loader = () => {
     const body = document.querySelector('body');

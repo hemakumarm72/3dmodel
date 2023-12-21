@@ -58,13 +58,13 @@ body {
 }
 
 .smallImg {
-  width: 100px;
+  width: 80px;
   height: 100px;
 }
 .back {
   width: 27.0625em;
   background: url(./ice3.png);
-  transform: rotateY(180deg) translate3d(1, 0, 3.1875em);
+  transform: rotateY(-180deg) translate3d(0, 1, 2.1875em);
 }
 
 .side {
