@@ -10,7 +10,7 @@ function Routers() {
   // console.log(auth);
   return (
     <Router>
-      <Suspense fallback={<h1>Loading....</h1>}>
+      <Suspense fallback={<h1>Loading1....</h1>}>
         {/* <Header /> */}
         <Routes>
           <Route path='/3dModel' element={<ModelDemo />} />
