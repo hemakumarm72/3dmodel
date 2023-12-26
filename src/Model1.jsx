@@ -1,6 +1,7 @@
 import './Mode1.css';
 import React, { useEffect } from 'react';
 import logo from '../src/450-20180301183118.jpg';
+import { NavLink } from 'react-router-dom';
 const Model1 = () => {
   const Loader = () => {
     const body = document.querySelector('body');
@@ -36,10 +37,11 @@ const Model1 = () => {
     <div>
       <section className='book-showcase'>
         <div className='wrapper'>
+          <NavLink to='/3dModel' key={Math.random()}>
+            3DModel
+          </NavLink>
           <div className='book'>
-            <div className='front'>
-              <img className='smallImg' src={logo} alt='#d' />
-            </div>
+            <div className='front'></div>
             <div className='side'></div>
             <div className='back'></div>
             <div className='pages'></div>
