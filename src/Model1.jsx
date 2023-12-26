@@ -37,11 +37,12 @@ const Model1 = () => {
     <div>
       <section className='book-showcase'>
         <div className='wrapper'>
-          <NavLink to='/3dModel' key={Math.random()}>
-            3DModel
-          </NavLink>
+          <NavLink to='/3dModel'>3DModel</NavLink>
+
           <div className='book'>
-            <div className='front'></div>
+            <div className='front'>
+              <img className='smallImg' src={logo} alt='#d' />
+            </div>
             <div className='side'></div>
             <div className='back'></div>
             <div className='pages'></div>
