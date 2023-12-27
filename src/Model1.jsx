@@ -38,7 +38,7 @@ const Model1 = () => {
       <section className='book-showcase'>
         <div className='wrapper'>
           <NavLink to='/3dModel'>3DModel</NavLink>
-
+          <NavLink to='/3dModel1'>3DModel</NavLink>
           <div className='book'>
             <div className='front'>
               <img className='smallImg' src={logo} alt='#d' />

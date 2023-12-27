@@ -95,6 +95,7 @@ function ModelDemo() {
               scale={islandScale}
               rotation={islandRotation}
               setCurrentStage={setCurrentStage}
+              isCurrent={currentStage}
             />
 
             <Plane
